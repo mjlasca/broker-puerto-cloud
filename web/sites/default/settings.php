@@ -856,6 +856,10 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # $settings['migrate_file_public_path'] = '';
 # $settings['migrate_file_private_path'] = '';
 
+// Set up a config sync directory.
+// This is defined inside the read-only "config" directory, deployed via Git.
+$settings['config_sync_directory'] = '../config/default/envs/sync';
+
 // Automatically generated include for settings managed by ddev.
 if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists(__DIR__ . '/settings.ddev.php')) {
   include __DIR__ . '/settings.ddev.php';
