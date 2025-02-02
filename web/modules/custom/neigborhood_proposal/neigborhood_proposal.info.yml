@@ -1,0 +1,5 @@
+name: 'Proposal custom module'
+type: module
+description: 'Module proposal custom'
+package: Barrios
+core_version_requirement: ^10 || ^11

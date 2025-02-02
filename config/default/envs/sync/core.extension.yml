@@ -32,6 +32,8 @@ module:
   menu_link_content: 0
   menu_ui: 0
   mysql: 0
+  neigborhood_custommer: 0
+  neigborhood_proposal: 0
   node: 0
   options: 0
   page_cache: 0

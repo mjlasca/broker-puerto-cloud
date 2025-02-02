@@ -1,0 +1,4 @@
+custommer-form:
+  js:
+    js/custommer-form.js: {}
+  dependencies:

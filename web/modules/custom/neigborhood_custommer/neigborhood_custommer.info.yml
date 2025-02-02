@@ -1,0 +1,5 @@
+name: 'Custommer custom module'
+type: module
+description: 'Module custommer custom'
+package: Barrios
+core_version_requirement: ^10 || ^11

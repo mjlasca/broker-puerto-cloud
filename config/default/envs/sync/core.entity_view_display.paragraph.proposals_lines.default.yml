@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.proposals_lines.field_activity
     - field.field.paragraph.proposals_lines.field_birth_date
     - field.field.paragraph.proposals_lines.field_classification
+    - field.field.paragraph.proposals_lines.field_custommer
     - field.field.paragraph.proposals_lines.field_document_number
     - field.field.paragraph.proposals_lines.field_document_type
     - field.field.paragraph.proposals_lines.field_lastname
@@ -42,6 +43,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_custommer:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_document_number:
     type: number_integer

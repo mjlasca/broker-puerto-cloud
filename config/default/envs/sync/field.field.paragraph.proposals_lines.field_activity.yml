@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.paragraph.field_activity
     - paragraphs.paragraphs_type.proposals_lines
-    - taxonomy.vocabulary.activity_clasification
 id: paragraph.proposals_lines.field_activity
 field_name: field_activity
 entity_type: paragraph
@@ -17,13 +16,10 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: views
   handler_settings:
-    target_bundles:
-      activity_clasification: activity_clasification
-    sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
+    view:
+      view_name: neig_activity
+      display_name: entity_reference_1
+      arguments: {  }
 field_type: entity_reference
