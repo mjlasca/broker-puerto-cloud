@@ -1,0 +1,10 @@
+uuid: b04b0ab5-abc2-4cd7-90cb-bb9fcbb95af8
+langcode: es
+status: true
+dependencies: {  }
+id: proposals_lines
+label: 'Líneas propuestas'
+icon_uuid: null
+icon_default: null
+description: 'Paragraph para crear registrar los asegurados en las propuestas'
+behavior_plugins: {  }

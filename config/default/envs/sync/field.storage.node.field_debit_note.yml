@@ -1,0 +1,20 @@
+uuid: 233cedae-344d-4db1-9e2c-beebff0bd4f1
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_debit_note
+field_name: field_debit_note
+entity_type: node
+type: decimal
+settings:
+  precision: 12
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

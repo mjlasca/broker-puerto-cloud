@@ -1,0 +1,11 @@
+uuid: bcce1d34-140a-4657-8934-07f536ff443f
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tax_situation
+id: taxonomy_term.tax_situation
+target_entity_type_id: taxonomy_term
+target_bundle: tax_situation
+default_langcode: site_default
+language_alterable: false

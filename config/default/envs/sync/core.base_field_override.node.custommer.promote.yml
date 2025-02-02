@@ -1,0 +1,22 @@
+uuid: 05c4b509-2885-4c3f-a720-28e06c1bf307
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.custommer
+id: node.custommer.promote
+field_name: promote
+entity_type: node
+bundle: custommer
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

@@ -1,0 +1,23 @@
+uuid: 22d9bba3-be49-44e8-a8d0-e1e2297fe95b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_debit_note
+    - node.type.proposal
+id: node.proposal.field_debit_note
+field_name: field_debit_note
+entity_type: node
+bundle: proposal
+label: 'Nota débito'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0.0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

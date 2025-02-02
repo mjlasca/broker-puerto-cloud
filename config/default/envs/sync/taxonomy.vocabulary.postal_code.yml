@@ -1,0 +1,9 @@
+uuid: ce6f0daa-8bf1-4325-a178-d943c16cb5c4
+langcode: es
+status: true
+dependencies: {  }
+name: 'Código postal'
+vid: postal_code
+description: 'Listado códigos postales'
+weight: 0
+new_revision: false

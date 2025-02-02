@@ -1,0 +1,29 @@
+uuid: 9d1e8a1f-98d5-4358-bdb9-108afe969bd4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_activity
+    - paragraphs.paragraphs_type.proposals_lines
+    - taxonomy.vocabulary.activity_clasification
+id: paragraph.proposals_lines.field_activity
+field_name: field_activity
+entity_type: paragraph
+bundle: proposals_lines
+label: Actividad
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      activity_clasification: activity_clasification
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

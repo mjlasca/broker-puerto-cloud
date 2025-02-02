@@ -1,0 +1,11 @@
+uuid: 1597d48d-1717-4c93-aeb1-52d1e597fca7
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.neighborhood
+id: node.neighborhood
+target_entity_type_id: node
+target_bundle: neighborhood
+default_langcode: site_default
+language_alterable: false

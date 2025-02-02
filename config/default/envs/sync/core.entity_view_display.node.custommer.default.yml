@@ -1,0 +1,122 @@
+uuid: 1ba6d5cb-652e-4d6d-ae89-5fd10b298005
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.custommer.field_address
+    - field.field.node.custommer.field_birth_date
+    - field.field.node.custommer.field_company
+    - field.field.node.custommer.field_document_number
+    - field.field.node.custommer.field_document_type
+    - field.field.node.custommer.field_lastname
+    - field.field.node.custommer.field_mail
+    - field.field.node.custommer.field_names
+    - field.field.node.custommer.field_phone
+    - field.field.node.custommer.field_postal_code
+    - field.field.node.custommer.field_sex
+    - node.type.custommer
+  module:
+    - datetime
+    - options
+    - user
+id: node.custommer.default
+targetEntityType: node
+bundle: custommer
+mode: default
+content:
+  field_address:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_birth_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_company:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_document_number:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_document_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_lastname:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_mail:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_names:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_phone:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_postal_code:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_sex:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

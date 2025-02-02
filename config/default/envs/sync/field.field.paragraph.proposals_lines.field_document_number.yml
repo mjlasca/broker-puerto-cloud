@@ -1,0 +1,23 @@
+uuid: e9b8de21-02a9-4d58-baf4-aef850a7c4b0
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_document_number
+    - paragraphs.paragraphs_type.proposals_lines
+id: paragraph.proposals_lines.field_document_number
+field_name: field_document_number
+entity_type: paragraph
+bundle: proposals_lines
+label: 'Número de documento'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

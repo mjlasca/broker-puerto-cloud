@@ -1,0 +1,9 @@
+uuid: 8cd2bbd4-7a77-4cb0-906c-e282c945b68b
+langcode: es
+status: true
+dependencies: {  }
+name: Actividad/Clasificación
+vid: activity_clasification
+description: 'Listado actividades y clasificaciones'
+weight: 0
+new_revision: false

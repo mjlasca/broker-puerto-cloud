@@ -1,0 +1,20 @@
+uuid: 28521fe2-b714-45c4-bd75-5c074389cc8c
+langcode: es
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_payment_date
+field_name: field_payment_date
+entity_type: node
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

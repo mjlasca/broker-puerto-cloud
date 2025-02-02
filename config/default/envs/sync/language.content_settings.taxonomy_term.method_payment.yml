@@ -1,0 +1,11 @@
+uuid: 6b56e527-128f-4713-b497-21684b9e33cf
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.method_payment
+id: taxonomy_term.method_payment
+target_entity_type_id: taxonomy_term
+target_bundle: method_payment
+default_langcode: site_default
+language_alterable: false

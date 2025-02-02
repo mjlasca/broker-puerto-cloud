@@ -1,0 +1,23 @@
+uuid: dd97ddbd-a118-4b70-9f00-1ceb214cbfa0
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sum_coverage
+    - node.type.proposal
+id: node.proposal.field_sum_coverage
+field_name: field_sum_coverage
+entity_type: node
+bundle: proposal
+label: 'Cobertura suma'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

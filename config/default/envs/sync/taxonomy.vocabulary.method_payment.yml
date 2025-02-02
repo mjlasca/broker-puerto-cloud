@@ -1,0 +1,9 @@
+uuid: cfc70f24-6662-4ef7-9389-5a3273dfcc60
+langcode: es
+status: true
+dependencies: {  }
+name: 'Forma de pago'
+vid: method_payment
+description: 'Listado formas de pago en propuestas'
+weight: 0
+new_revision: false

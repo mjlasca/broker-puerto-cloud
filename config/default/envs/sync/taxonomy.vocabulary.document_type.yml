@@ -1,0 +1,9 @@
+uuid: b8586af6-d4b9-4d7c-9a4a-0586d0cc9158
+langcode: es
+status: true
+dependencies: {  }
+name: 'Tipo de documento'
+vid: document_type
+description: 'Listado opciones tipo de documento'
+weight: 0
+new_revision: false

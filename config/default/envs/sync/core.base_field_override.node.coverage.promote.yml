@@ -1,0 +1,22 @@
+uuid: 9240b84d-3a60-40dd-874f-017387fb0a89
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.coverage
+id: node.coverage.promote
+field_name: promote
+entity_type: node
+bundle: coverage
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

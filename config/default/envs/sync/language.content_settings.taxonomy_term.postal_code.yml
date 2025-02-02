@@ -1,0 +1,11 @@
+uuid: b5fdc9f5-ded0-4f80-9f3b-c5012d6d96ff
+langcode: es
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.postal_code
+id: taxonomy_term.postal_code
+target_entity_type_id: taxonomy_term
+target_bundle: postal_code
+default_langcode: site_default
+language_alterable: false

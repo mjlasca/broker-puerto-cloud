@@ -1,0 +1,11 @@
+uuid: a1a87906-1053-4cc8-ae88-810881c2f84c
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.neighborhood_group
+id: node.neighborhood_group
+target_entity_type_id: node
+target_bundle: neighborhood_group
+default_langcode: site_default
+language_alterable: false

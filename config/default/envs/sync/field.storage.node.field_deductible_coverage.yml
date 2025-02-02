@@ -1,0 +1,20 @@
+uuid: 99ef2b61-1669-4e45-a157-0f4935a3ac2f
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_deductible_coverage
+field_name: field_deductible_coverage
+entity_type: node
+type: decimal
+settings:
+  precision: 12
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

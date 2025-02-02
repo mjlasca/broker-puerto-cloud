@@ -1,0 +1,17 @@
+uuid: 2d91600c-1093-4e96-b3b0-ea309a486446
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Aseguradora
+type: insurance
+description: 'Tipo de contenido para crear aseguradoras'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

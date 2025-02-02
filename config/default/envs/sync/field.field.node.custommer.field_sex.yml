@@ -1,0 +1,21 @@
+uuid: dbd1486c-0c6f-4e63-8a4f-cdeeb4e6a6ff
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sex
+    - node.type.custommer
+  module:
+    - options
+id: node.custommer.field_sex
+field_name: field_sex
+entity_type: node
+bundle: custommer
+label: Sexo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

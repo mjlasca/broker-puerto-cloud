@@ -1,0 +1,22 @@
+uuid: 7713d244-f029-4504-9348-269750a70cf3
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.neighborhood_group
+id: node.neighborhood_group.promote
+field_name: promote
+entity_type: node
+bundle: neighborhood_group
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

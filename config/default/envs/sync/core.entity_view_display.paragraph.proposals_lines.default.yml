@@ -1,0 +1,79 @@
+uuid: 0abdf227-014b-4524-b294-6c3ff2c8d88f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.proposals_lines.field_activity
+    - field.field.paragraph.proposals_lines.field_birth_date
+    - field.field.paragraph.proposals_lines.field_classification
+    - field.field.paragraph.proposals_lines.field_document_number
+    - field.field.paragraph.proposals_lines.field_document_type
+    - field.field.paragraph.proposals_lines.field_lastname
+    - field.field.paragraph.proposals_lines.field_names
+    - paragraphs.paragraphs_type.proposals_lines
+  module:
+    - datetime
+id: paragraph.proposals_lines.default
+targetEntityType: paragraph
+bundle: proposals_lines
+mode: default
+content:
+  field_activity:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_birth_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_classification:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_document_number:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_document_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_lastname:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_names:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden: {  }

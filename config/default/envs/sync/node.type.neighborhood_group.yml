@@ -1,0 +1,17 @@
+uuid: 16ea4e2e-6e6b-46c2-bcc6-8bef3c93a575
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Grupo barrios'
+type: neighborhood_group
+description: 'Tipo de contenido para crear grupos de barrios'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,17 @@
+uuid: f1df1b6c-0b5e-4ee7-98d8-092c970ba10f
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Propuesta
+type: proposal
+description: 'Tipo de contenido para crerar propuestas'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

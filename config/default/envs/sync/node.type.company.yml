@@ -1,0 +1,17 @@
+uuid: b03539ed-720a-4435-875a-0d2d548c5038
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Empresa
+type: company
+description: 'Tipo de contenido para crear empresas'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

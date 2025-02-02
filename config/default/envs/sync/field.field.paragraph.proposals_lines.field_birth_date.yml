@@ -1,0 +1,21 @@
+uuid: 95dfd5d9-674e-4d5a-9e8a-4592c29ba3ad
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_birth_date
+    - paragraphs.paragraphs_type.proposals_lines
+  module:
+    - datetime
+id: paragraph.proposals_lines.field_birth_date
+field_name: field_birth_date
+entity_type: paragraph
+bundle: proposals_lines
+label: 'Fecha de nacimiento'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

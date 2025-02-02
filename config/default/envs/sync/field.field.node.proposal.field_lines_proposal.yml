@@ -1,0 +1,31 @@
+uuid: 531b1c49-573f-419d-8752-9d96c54b4d3b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lines_proposal
+    - node.type.proposal
+    - paragraphs.paragraphs_type.proposals_lines
+  module:
+    - entity_reference_revisions
+id: node.proposal.field_lines_proposal
+field_name: field_lines_proposal
+entity_type: node
+bundle: proposal
+label: 'Líneas propuestas'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      proposals_lines: proposals_lines
+    negate: 0
+    target_bundles_drag_drop:
+      proposals_lines:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

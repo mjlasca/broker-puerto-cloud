@@ -1,0 +1,11 @@
+uuid: 81591701-d0f4-4ef1-86f1-a457dd567943
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.insurance
+id: node.insurance
+target_entity_type_id: node
+target_bundle: insurance
+default_langcode: site_default
+language_alterable: false

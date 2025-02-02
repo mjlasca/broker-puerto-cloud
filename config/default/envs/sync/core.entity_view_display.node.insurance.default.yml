@@ -1,0 +1,29 @@
+uuid: d9c6c28d-9fc0-4b89-98e0-31d520a79fbd
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.insurance.field_company
+    - node.type.insurance
+  module:
+    - user
+id: node.insurance.default
+targetEntityType: node
+bundle: insurance
+mode: default
+content:
+  field_company:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

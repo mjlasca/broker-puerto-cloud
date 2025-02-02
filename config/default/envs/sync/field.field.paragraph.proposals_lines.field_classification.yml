@@ -1,0 +1,29 @@
+uuid: 37e90e8f-d8e1-4486-90c7-ddbc86ff2793
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_classification
+    - paragraphs.paragraphs_type.proposals_lines
+    - taxonomy.vocabulary.activity_clasification
+id: paragraph.proposals_lines.field_classification
+field_name: field_classification
+entity_type: paragraph
+bundle: proposals_lines
+label: Clasificación
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      activity_clasification: activity_clasification
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

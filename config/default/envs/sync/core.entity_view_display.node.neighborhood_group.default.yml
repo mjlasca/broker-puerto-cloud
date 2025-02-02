@@ -1,0 +1,38 @@
+uuid: c0b105f6-0193-4cba-892a-52b5c26b049d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.neighborhood_group.field_company
+    - field.field.node.neighborhood_group.field_neighborhood
+    - node.type.neighborhood_group
+  module:
+    - user
+id: node.neighborhood_group.default
+targetEntityType: node
+bundle: neighborhood_group
+mode: default
+content:
+  field_company:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_neighborhood:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

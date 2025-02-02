@@ -1,0 +1,9 @@
+uuid: 5dd32a4c-6369-4b77-a79b-9b9fd9457591
+langcode: es
+status: true
+dependencies: {  }
+name: 'Situación impositiva'
+vid: tax_situation
+description: 'Opciones situación impositiva'
+weight: 0
+new_revision: false

@@ -1,0 +1,17 @@
+uuid: ab78848f-a3f1-416b-a657-b43cbadc1b0d
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Barrio
+type: neighborhood
+description: 'Tipo de contenido para crear barrios'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

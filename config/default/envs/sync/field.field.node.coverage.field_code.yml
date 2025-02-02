@@ -1,0 +1,23 @@
+uuid: f1648097-ecfb-4692-8ff2-4796e7a91d90
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_code
+    - node.type.coverage
+id: node.coverage.field_code
+field_name: field_code
+entity_type: node
+bundle: coverage
+label: 'Código clasificación'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

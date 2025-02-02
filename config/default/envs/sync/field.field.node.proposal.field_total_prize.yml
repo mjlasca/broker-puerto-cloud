@@ -1,0 +1,23 @@
+uuid: 7dab7777-a30f-44e5-afb6-97bdd0237334
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_total_prize
+    - node.type.proposal
+id: node.proposal.field_total_prize
+field_name: field_total_prize
+entity_type: node
+bundle: proposal
+label: 'Premio total'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

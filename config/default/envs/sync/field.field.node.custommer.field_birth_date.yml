@@ -1,0 +1,21 @@
+uuid: dbeff7fe-033f-47e1-a0d1-ab86ba054f92
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_birth_date
+    - node.type.custommer
+  module:
+    - datetime
+id: node.custommer.field_birth_date
+field_name: field_birth_date
+entity_type: node
+bundle: custommer
+label: 'Fecha de nacimiento'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

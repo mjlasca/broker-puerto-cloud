@@ -1,0 +1,22 @@
+uuid: 706cc7f4-1f38-45be-8faf-5ca19fa42dee
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.proposal
+id: node.proposal.promote
+field_name: promote
+entity_type: node
+bundle: proposal
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activado
+  off_label: Desactivado
+field_type: boolean

@@ -1,0 +1,19 @@
+uuid: a492c53f-8ab1-4d83-9f07-198c989f4d41
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reference
+    - node.type.proposal
+id: node.proposal.field_reference
+field_name: field_reference
+entity_type: node
+bundle: proposal
+label: Referencia
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

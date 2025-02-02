@@ -1,0 +1,29 @@
+uuid: bbb4b868-4fa3-4453-a9eb-7842756e4119
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_payment_user
+    - node.type.proposal
+id: node.proposal.field_payment_user
+field_name: field_payment_user
+entity_type: node
+bundle: proposal
+label: 'Usuario paga'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: true
+field_type: entity_reference

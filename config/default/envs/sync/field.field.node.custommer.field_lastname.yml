@@ -1,0 +1,19 @@
+uuid: 0f1a2cf6-cd38-48c2-a177-b4947917356d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lastname
+    - node.type.custommer
+id: node.custommer.field_lastname
+field_name: field_lastname
+entity_type: node
+bundle: custommer
+label: Apellidos
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

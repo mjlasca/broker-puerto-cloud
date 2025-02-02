@@ -1,0 +1,21 @@
+uuid: 8a1ca38c-2714-44a9-ba8a-b8b22694598f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_months
+    - node.type.proposal
+  module:
+    - options
+id: node.proposal.field_months
+field_name: field_months
+entity_type: node
+bundle: proposal
+label: Meses
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer
