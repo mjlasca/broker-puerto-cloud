@@ -11,7 +11,7 @@ field_name: field_taker
 entity_type: node
 bundle: proposal
 label: Tomador
-description: ''
+description: 'Si no existe el cliente puede crearlo <a href="https:/node/add/custommer" target="_blank">aquí</a> y volver a buscarlo'
 required: true
 translatable: false
 default_value: {  }
