@@ -2,6 +2,6 @@
 
 function neigborhood_proposal_form_alter(&$form, &$form_state, $form_id) {
   if($form_id == 'node_proposal_form' || $form_id == 'node_proposal_form_edit'){
-    
+    $form['#attached']['library'][] = 'neigborhood_proposal/proposal-form';
   }
 }

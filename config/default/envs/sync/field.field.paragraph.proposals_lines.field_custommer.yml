@@ -11,7 +11,7 @@ field_name: field_custommer
 entity_type: paragraph
 bundle: proposals_lines
 label: Cliente
-description: ''
+description: 'Si no existe el cliente puede crearlo dando <a href="#" class="create-custommer" >clic aquí</a>'
 required: true
 translatable: false
 default_value: {  }

@@ -1,4 +1,10 @@
-custommer-form:
+proposal-form:
+  version: VERSION
+  css:
+    theme:
+      css/proposal.css: {}
   js:
-    js/custommer-form.js: {}
+    js/proposal-form.js: {}
   dependencies:
+    - core/jquery
+    - core/drupal
