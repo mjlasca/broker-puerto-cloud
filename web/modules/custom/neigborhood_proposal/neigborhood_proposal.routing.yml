@@ -1,0 +1,17 @@
+proposal.get_doc_type:
+  path: '/get/document-type'
+  defaults:
+    _controller: \Drupal\neigborhood_proposal\Controller\ProposalController::getDocumentType
+    _title: 'Get document type'
+  requirements:
+    _permission: 'access content'
+    _role: 'authenticated'
+
+proposal.create_client:
+  path: '/create/client'
+  defaults:
+    _controller: \Drupal\neigborhood_proposal\Controller\ProposalController::createClient
+    _title: 'Create client'
+  requirements:
+    _permission: 'access content'
+    _role: 'authenticated'    
