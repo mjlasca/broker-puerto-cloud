@@ -1,26 +1,27 @@
 (function ($, Drupal) {
   Drupal.behaviors.ProposalForm = {
     attach: function (context, settings) {
-      const title = context.querySelector('.form-item--title-0-value');
-      const prize = context.querySelector('#edit-field-prize-0-value');
-      const totalPrize = context.querySelector('#edit-field-total-prize-0-value');
+      const title = context.querySelector(".form-item--title-0-value");
+      const prize = context.querySelector("#edit-field-prize-0-value");
+      const totalPrize = context.querySelector(
+        "#edit-field-total-prize-0-value"
+      );
+      let currentLine = null;
 
-      if(title)
-        title.classList.add('hide');
-      if(prize)
-        prize.setAttribute("readonly", true);
-      if(totalPrize)
-        totalPrize.setAttribute("readonly", true);
+      if (title) title.classList.add("hide");
+      if (prize) prize.setAttribute("readonly", true);
+      if (totalPrize) totalPrize.setAttribute("readonly", true);
 
-      const createCustommer = context.querySelectorAll('.create-custommer');
+      const createCustommer = context.querySelectorAll(".create-custommer");
       if (createCustommer) {
-        createCustommer.forEach(linkcustommer => {
-          linkcustommer.addEventListener('click', function(event) {
+        createCustommer.forEach((linkcustommer) => {
+          linkcustommer.addEventListener("click", function (event) {
             event.preventDefault();
-            const modalPro = context.querySelector('#modal-pro');
-            if(modalPro){
-              modalPro.classList.remove('hide');
-            }else{
+            currentLine = event.target.closest('.js-form-item').querySelector('input[type="text"]');
+            const modalPro = context.querySelector("#modal-pro");
+            if (modalPro) {
+              modalPro.classList.remove("hide");
+            } else {
               showModal();
             }
           });
@@ -28,19 +29,19 @@
       }
 
       async function getDocumentType() {
-        const response = await fetch('/get/document-type');
-        const data = await response.json().then(data => { return data});
+        const response = await fetch("/get/document-type");
+        const data = await response.json().then((data) => {
+          return data;
+        });
         return data;
       }
-    
 
       async function showModal() {
         const documentType = await getDocumentType();
         let options = "";
         Object.entries(documentType).forEach(([key, val]) => {
-          options = `<option value="${key}">${val}</option>` + options;   
+          options = `<option value="${key}">${val}</option>` + options;
         });
-        console.log(options);
         let modal = document.createElement("div");
         modal.id = "modal-pro";
         modal.className = "modal";
@@ -61,31 +62,35 @@
             </form>
           </div>
         `;
-        const form = context.querySelector('.node-form');
+        const form = context.querySelector(".node-form");
         if (form) {
           form.appendChild(modal);
-          let closeModal = modal.querySelector('.close-modal');
-          closeModal.addEventListener('click', function(event) {
-            modal.classList.add('hide');
+          let closeModal = modal.querySelector(".close-modal");
+          closeModal.addEventListener("click", function (event) {
+            modal.classList.add("hide");
           });
         }
-        sendModal = context.querySelector('#form-modal-client');
-        if(sendModal){
-          sendModal.addEventListener('submit', function(event) {
+        sendModal = context.querySelector("#form-modal-client");
+        if (sendModal) {
+          sendModal.addEventListener("submit", function (event) {
             event.preventDefault();
             const obj = {
-              names : context.querySelector('input[name="modal_name"]').value,
-              lastnames : context.querySelector('input[name="modal_lastname"]').value,
-              document_type : context.querySelector('select[name="modal_document_type"]').value,
-              document : context.querySelector('input[name="modal_document"]').value,
-              borth_date : context.querySelector('input[name="modal_date"]').value,
+              names: context.querySelector('input[name="modal_name"]').value,
+              lastnames: context.querySelector('input[name="modal_lastname"]')
+                .value,
+              document_type: context.querySelector(
+                'select[name="modal_document_type"]'
+              ).value,
+              document: context.querySelector('input[name="modal_document"]')
+                .value,
+              birth_date: context.querySelector('input[name="modal_date"]')
+                .value,
             };
-            setClient(obj); 
-          })
+            setClient(obj);
+          });
         }
-
       }
-      let sendModal = context.querySelector('#form-modal-client');
+      let sendModal = context.querySelector("#form-modal-client");
 
       async function setClient(obj) {
         const data = {
@@ -93,7 +98,7 @@
           lastnames: obj.lastnames,
           document_type: obj.document_type,
           document: obj.document,
-          borth_date: obj.borth_date,
+          birth_date: obj.birth_date,
         };
         try {
           const response = await fetch("/create/client", {
@@ -104,9 +109,12 @@
             body: JSON.stringify(data),
           });
           const result = await response.json();
-          console.log(result);
-          if (result) {
-            return result[0];
+          if (result && result.success == true) {
+            if(currentLine != null){
+              currentLine.value = `${result.names} ${result.lastnames} `;
+              context.querySelector(".close-modal").click();
+            }
+            return result;
           } else {
             return false;
           }
@@ -114,7 +122,6 @@
           console.error("Error en la petición:", error);
         }
       }
-
     },
   };
 })(jQuery, Drupal);

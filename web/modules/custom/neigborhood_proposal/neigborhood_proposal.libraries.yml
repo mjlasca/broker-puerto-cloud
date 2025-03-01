@@ -1,5 +1,5 @@
 proposal-form:
-  version: VERSION
+  version: 4
   css:
     theme:
       css/proposal.css: {}

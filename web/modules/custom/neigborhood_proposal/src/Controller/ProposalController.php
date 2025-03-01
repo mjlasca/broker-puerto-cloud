@@ -88,10 +88,24 @@ class ProposalController extends ControllerBase
      *  Json with data of ultmod
      */
     public function createClient(Request $req) : JsonResponse {
-        $param = $req->query->all();
-        var_dump($param);
-        exit;
-        return  new JsonResponse($param);
+        $data = json_decode($req->getContent(), true);
+        $data['success'] = FALSE;
+        if($data){
+            $node = $this->entityTypeManager->getStorage('node')->create([
+                'type' => 'custommer',
+                'title' => $data['names'] . ' ' . $data['lastnames'] .' '.$data['document'],
+                'field_document_number' => $data['document'],
+                'field_names' => $data['names'],
+                'field_lastname' => $data['lastnames'],
+                'field_birth_date' => $data['birth_date'],
+                'field_document_type' => $data['document_type'],
+            ]);
+            
+            if($node->save()){
+                $data['success'] = true;
+            }
+        }
+        return new JsonResponse($data);
     }
 
     /**
@@ -117,7 +131,7 @@ class ProposalController extends ControllerBase
      */
     public function getListTaxonomy($machine_name, $empty_value = '-- Seleccionar --') : array {
         $result = ['' => $empty_value];
-        $companies = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($machine_name);
+        $companies = $this->entityTypeManager->getStorage('taxonomy_term')->loadTree($machine_name);
         foreach ($companies as $key => $value) {
             $result[$value->tid] = $value->name;
         }
