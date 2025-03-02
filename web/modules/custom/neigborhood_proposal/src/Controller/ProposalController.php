@@ -232,12 +232,15 @@ class ProposalController extends ControllerBase
         $dompdf->render();
         $pdfOutput = $dompdf->output();
         $filename = "Proposal_$nid.pdf";
+        $isMobile = preg_match('/iphone|ipod|ipad|android|blackberry|opera mini|windows phone/i', $_SERVER['HTTP_USER_AGENT']);
+        $contentDisposition = $isMobile ? 'attachment' : 'inline';
+
         return new Response(
             $pdfOutput,
             200,
             [
                 'Content-Type' => 'application/pdf',
-                'Content-Disposition' => 'inline; filename="' . $filename . '"',
+                "Content-Disposition" => "$contentDisposition; filename=\"$filename\"",
             ]
         );
 
