@@ -1,15 +1,15 @@
-uuid: ef6798cf-a1fe-4007-833f-f54f34e1ee5b
+uuid: 0c7d1496-86ea-485c-8f97-1aaa8d45bb7e
 langcode: es
 status: true
 dependencies:
   config:
-    - field.storage.node.field_sum
+    - field.storage.node.field_monthly_value
     - node.type.coverage
-id: node.coverage.field_sum
-field_name: field_sum
+id: node.coverage.field_monthly_value
+field_name: field_monthly_value
 entity_type: node
 bundle: coverage
-label: 'Suma asegurada por muerte o invalidez'
+label: 'Valor mensual'
 description: ''
 required: true
 translatable: false
@@ -17,7 +17,7 @@ default_value: {  }
 default_value_callback: ''
 settings:
   min: null
-  max: 2.0E+14
+  max: null
   prefix: ''
   suffix: ''
 field_type: decimal

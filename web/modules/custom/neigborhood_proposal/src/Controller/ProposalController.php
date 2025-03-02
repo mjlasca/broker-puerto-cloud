@@ -115,6 +115,9 @@ class ProposalController extends ControllerBase
      *  Json with data of taxonomy
      */
     public function getDocumentType() : JsonResponse {
+        /*$coverage = $this->entityTypeManager->getStorage('node')->load(57);
+        $coverage->set('field_sum',8000000);
+        $coverage->save();*/
         $tax = $this->getListTaxonomy('document_type', 'Tipo de documento');
         return  new JsonResponse($tax);
     }

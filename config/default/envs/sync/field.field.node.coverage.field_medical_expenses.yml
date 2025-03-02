@@ -1,15 +1,15 @@
-uuid: ef6798cf-a1fe-4007-833f-f54f34e1ee5b
+uuid: 43afc7a5-fb7e-4aa4-bf50-cea356ed1960
 langcode: es
 status: true
 dependencies:
   config:
-    - field.storage.node.field_sum
+    - field.storage.node.field_medical_expenses
     - node.type.coverage
-id: node.coverage.field_sum
-field_name: field_sum
+id: node.coverage.field_medical_expenses
+field_name: field_medical_expenses
 entity_type: node
 bundle: coverage
-label: 'Suma asegurada por muerte o invalidez'
+label: 'Gastos médicos'
 description: ''
 required: true
 translatable: false
@@ -17,7 +17,7 @@ default_value: {  }
 default_value_callback: ''
 settings:
   min: null
-  max: 2.0E+14
+  max: null
   prefix: ''
   suffix: ''
 field_type: decimal

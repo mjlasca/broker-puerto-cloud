@@ -3,8 +3,14 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.node.coverage.field_2x1
+    - field.field.node.coverage.field_3x2
+    - field.field.node.coverage.field_6x4
     - field.field.node.coverage.field_code
     - field.field.node.coverage.field_company
+    - field.field.node.coverage.field_deductible
+    - field.field.node.coverage.field_medical_expenses
+    - field.field.node.coverage.field_monthly_value
     - field.field.node.coverage.field_sum
     - node.type.coverage
   module:
@@ -14,6 +20,39 @@ targetEntityType: node
 bundle: coverage
 mode: default
 content:
+  field_2x1:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_3x2:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_6x4:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
   field_code:
     type: number_integer
     label: above
@@ -31,6 +70,39 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  field_deductible:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_medical_expenses:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_monthly_value:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
   field_sum:
     type: number_decimal
     label: above
@@ -40,7 +112,7 @@ content:
       scale: 2
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 102
+    weight: 109
     region: content
   links:
     settings: {  }

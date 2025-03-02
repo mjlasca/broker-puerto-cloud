@@ -3,8 +3,14 @@ langcode: es
 status: true
 dependencies:
   config:
+    - field.field.node.coverage.field_2x1
+    - field.field.node.coverage.field_3x2
+    - field.field.node.coverage.field_6x4
     - field.field.node.coverage.field_code
     - field.field.node.coverage.field_company
+    - field.field.node.coverage.field_deductible
+    - field.field.node.coverage.field_medical_expenses
+    - field.field.node.coverage.field_monthly_value
     - field.field.node.coverage.field_sum
     - node.type.coverage
   module:
@@ -19,6 +25,27 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_2x1:
+    type: number
+    weight: 126
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_3x2:
+    type: number
+    weight: 127
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_6x4:
+    type: number
+    weight: 128
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_code:
     type: number
@@ -37,9 +64,30 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_deductible:
+    type: number
+    weight: 124
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_medical_expenses:
+    type: number
+    weight: 123
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_monthly_value:
+    type: number
+    weight: 125
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_sum:
     type: number
-    weight: 122
+    weight: 129
     region: content
     settings:
       placeholder: ''

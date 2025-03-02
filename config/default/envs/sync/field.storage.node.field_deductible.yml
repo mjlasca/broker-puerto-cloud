@@ -1,15 +1,15 @@
-uuid: 39d2288a-9863-42ef-ab74-38a4c5226858
+uuid: 2663d4f2-c688-448f-b8fa-df185e44b696
 langcode: es
 status: true
 dependencies:
   module:
     - node
-id: node.field_sum
-field_name: field_sum
+id: node.field_deductible
+field_name: field_deductible
 entity_type: node
 type: decimal
 settings:
-  precision: 20
+  precision: 15
   scale: 2
 module: core
 locked: false

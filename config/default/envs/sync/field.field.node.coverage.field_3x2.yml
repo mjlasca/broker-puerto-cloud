@@ -1,23 +1,23 @@
-uuid: ef6798cf-a1fe-4007-833f-f54f34e1ee5b
+uuid: 7023fb25-a66c-4c1e-90a4-98c381cf568d
 langcode: es
 status: true
 dependencies:
   config:
-    - field.storage.node.field_sum
+    - field.storage.node.field_3x2
     - node.type.coverage
-id: node.coverage.field_sum
-field_name: field_sum
+id: node.coverage.field_3x2
+field_name: field_3x2
 entity_type: node
 bundle: coverage
-label: 'Suma asegurada por muerte o invalidez'
+label: 3x2
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   min: null
-  max: 2.0E+14
+  max: null
   prefix: ''
   suffix: ''
 field_type: decimal

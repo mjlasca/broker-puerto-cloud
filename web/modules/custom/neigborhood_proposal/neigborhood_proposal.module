@@ -1,7 +1,22 @@
 <?php
 
 function neigborhood_proposal_form_alter(&$form, &$form_state, $form_id) {
-  if($form_id == 'node_proposal_form' || $form_id == 'node_proposal_form_edit'){
+
+  if($form_id == 'node_proposal_form' || $form_id == 'node_proposal_edit_form'){
     $form['#attached']['library'][] = 'neigborhood_proposal/proposal-form';
+    array_unshift($form['#validate'], 'neigborhood_proposal_custom_validate');
+  }
+}
+
+/**
+ * Validación personalizada para el formulario.
+ */
+function neigborhood_proposal_custom_validate(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $values = $form_state->getValues();
+  if(!empty($values['field_taker'][0]['target_id'])){
+    $custommer = \Drupal::entityTypeManager()->getStorage('node')->load($values['field_taker'][0]['target_id']);
+    if(!empty($custommer)){
+      $form_state->setValue('title', [['value' => 'Propuesta de '.$custommer->title->value]]);
+    }
   }
 }

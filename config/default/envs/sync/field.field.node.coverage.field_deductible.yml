@@ -1,15 +1,15 @@
-uuid: ef6798cf-a1fe-4007-833f-f54f34e1ee5b
+uuid: 4fba336a-7d1e-456b-b171-08280e89a84f
 langcode: es
 status: true
 dependencies:
   config:
-    - field.storage.node.field_sum
+    - field.storage.node.field_deductible
     - node.type.coverage
-id: node.coverage.field_sum
-field_name: field_sum
+id: node.coverage.field_deductible
+field_name: field_deductible
 entity_type: node
 bundle: coverage
-label: 'Suma asegurada por muerte o invalidez'
+label: Deducible
 description: ''
 required: true
 translatable: false
@@ -17,7 +17,7 @@ default_value: {  }
 default_value_callback: ''
 settings:
   min: null
-  max: 2.0E+14
+  max: null
   prefix: ''
   suffix: ''
 field_type: decimal

@@ -1,15 +1,15 @@
-uuid: 39d2288a-9863-42ef-ab74-38a4c5226858
+uuid: 37896932-b164-44cc-b389-d50d9b5ca98f
 langcode: es
 status: true
 dependencies:
   module:
     - node
-id: node.field_sum
-field_name: field_sum
+id: node.field_6x4
+field_name: field_6x4
 entity_type: node
 type: decimal
 settings:
-  precision: 20
+  precision: 15
   scale: 2
 module: core
 locked: false

@@ -1,15 +1,15 @@
-uuid: 39d2288a-9863-42ef-ab74-38a4c5226858
+uuid: 2f1e7a3a-0fbe-4e8a-8d98-643904350fe3
 langcode: es
 status: true
 dependencies:
   module:
     - node
-id: node.field_sum
-field_name: field_sum
+id: node.field_monthly_value
+field_name: field_monthly_value
 entity_type: node
 type: decimal
 settings:
-  precision: 20
+  precision: 15
   scale: 2
 module: core
 locked: false
