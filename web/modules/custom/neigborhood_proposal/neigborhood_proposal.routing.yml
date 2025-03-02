@@ -14,4 +14,13 @@ proposal.create_client:
     _title: 'Create client'
   requirements:
     _permission: 'access content'
-    _role: 'authenticated'    
+    _role: 'authenticated'
+
+proposal.get_activity_clasification:
+  path: '/get/activity-clasification/{idActivity}'
+  defaults:
+    _controller: \Drupal\neigborhood_proposal\Controller\ProposalController::getClasificationForActivity
+    _title: 'Create client'
+  requirements:
+    _permission: 'access content'
+    _role: 'authenticated'

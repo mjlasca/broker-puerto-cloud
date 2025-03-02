@@ -43,3 +43,8 @@
 .hide {
   display: none;
 }
+
+.flex .fieldset__wrapper{
+  display: flex;
+  gap: 20px;
+}

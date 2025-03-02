@@ -82,7 +82,7 @@ class ProposalController extends ControllerBase
 
     /**
      * Create client
-     * 
+     *
      * @param Request $req
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      *  Json with data of ultmod
@@ -100,7 +100,7 @@ class ProposalController extends ControllerBase
                 'field_birth_date' => $data['birth_date'],
                 'field_document_type' => $data['document_type'],
             ]);
-            
+
             if($node->save()){
                 $data['success'] = true;
             }
@@ -111,17 +111,30 @@ class ProposalController extends ControllerBase
     /**
      * Get calendar events
      *
-     * @param string $type
-     *  Type calendar event
-     * @param string $field_year
-     *  Field year is all or noyear, the difference is that the
-     *  field_year_only field shows whether the event is annual or monthly and weekly
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      *  Json with data of taxonomy
      */
     public function getDocumentType() : JsonResponse {
         $tax = $this->getListTaxonomy('document_type', 'Tipo de documento');
         return  new JsonResponse($tax);
+    }
+
+    /**
+     * Get Clasification for activity id
+     *
+     * @param int $activity_id
+     *  Id Activity
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     *  Json with data of taxonomy
+     */
+    public function getClasificationForActivity($idActivity) : JsonResponse {
+        $result = ['' => '-- Seleccionar --'];
+        $companies = $this->entityTypeManager->getStorage('taxonomy_term')->loadTree('activity_clasification');
+        foreach ($companies as $key => $value) {
+            if(reset($value->parents) == $idActivity)
+                $result[$value->tid] = $value->name;
+        }
+        return  new JsonResponse($result);
     }
 
      /**
@@ -137,5 +150,5 @@ class ProposalController extends ControllerBase
         }
         return $result;
     }
-    
+
 }

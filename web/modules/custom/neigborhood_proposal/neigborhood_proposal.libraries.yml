@@ -4,6 +4,9 @@ proposal-form:
     theme:
       css/proposal.css: {}
   js:
+    https://cdn.jsdelivr.net/npm/date-fns@4.1.0/cdn.min.js:
+      type: external
+      minified: true
     js/proposal-form.js: {}
   dependencies:
     - core/jquery
