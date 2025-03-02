@@ -1,7 +1,7 @@
 (function ($, Drupal) {
   Drupal.behaviors.ProposalForm = {
     attach: function (context, settings) {
-      const title = context.querySelector(".form-item--title-0-value");
+      const title = context.querySelector("#edit-title-0-value");
       const prize = context.querySelector("#edit-field-prize-0-value");
       const totalPrize = context.querySelector(
         "#edit-field-total-prize-0-value"
@@ -12,6 +12,9 @@
       const timeValidate = context.querySelector('#edit-field-validity-until-0-value-time');
       const groupPolizas = context.querySelector("#edit-group-polizas table");
       const months = context.querySelector('#edit-field-months');
+      const coverage = document.querySelector('input[name="field_coverage[0][target_id]"]');
+      let prizeFixed = 0;
+
 
       if(date1Validate){
         date1Validate.setAttribute('readonly',true);
@@ -31,6 +34,7 @@
       if(months){
         months.addEventListener("change", function(event) {
           calculateEndDate(date0Validate,date1Validate,months);
+          calculatePrizeTotal();
         });
       }
 
@@ -52,12 +56,15 @@
             "input[name*='[subform][field_custommer]']"
           );
           custommerLine.addEventListener('change', function(event) {
-            const exists = Array.from(allCustommerLines).some(
-              (select) => select !== this && select.value === this.value
-            );
-            if(exists){
-              alert('El cliente ya ha sido agregado');
-              custommerLine.value = "";
+            if(this.value != ""){
+              const exists = Array.from(allCustommerLines).some(
+                (select) => select !== this && select.value === this.value
+              );
+              if(exists){
+                alert('El cliente ya ha sido agregado');
+                custommerLine.value = "";
+              }
+              calculatePrizeTotal();
             }
           });
           selectActivity.addEventListener("change", async function (event) {
@@ -69,12 +76,30 @@
                 options = `<option value="${key}">${val}</option>` + options;
               });
               selectClassification.innerHTML = options;
+              calculatePrizeTotal();
             }
           });
+          selectClassification.addEventListener("change", async function (event) {
+            if (this.value != "") {
+              calculatePrizeTotal();
+            }
+          });
+
         });
       }
 
-      if (title) title.classList.add("hide");
+      if(coverage){
+        coverage.addEventListener('change', function(event) {
+          if(this.value != '' && this.value.indexOf("(") > -1){
+            calculatePrizeTotal();
+          }
+        });
+      }
+
+      if (title){
+        title.value = "no-title";
+        title.parentNode.classList.add("hide");
+      }
       if (prize) prize.setAttribute("readonly", true);
       if (totalPrize) totalPrize.setAttribute("readonly", true);
 
@@ -210,6 +235,73 @@
         const formattedDate = dateFns.format(newDate, "yyyy-MM-dd");
         endDateInput.value = formattedDate;
         timeValidate.value = "23:59:59";
+      }
+
+      function calculatePrizeTotal() {
+
+        if(coverage && months && groupPolizas){
+          const objCalc = {
+            'months' : months.value,
+            'coverage': coverage.value,
+            'lines': []
+          };
+
+          let validate = true;
+          const lines = groupPolizas.querySelectorAll(
+            ".paragraph-type--proposals-lines"
+          );
+          console.log(lines.length);
+          lines.forEach((line) => {
+            const selectActivity = line.querySelector(
+              "select[name*='[subform][field_activity]']"
+            );
+            const selectClassification = line.querySelector(
+              "select[name*='[subform][field_classification]']"
+            );
+            const custommerLine = line.querySelector(
+              "input[name*='[subform][field_custommer]']"
+            );
+            if(selectActivity.value == "" || selectClassification.value == "" || custommerLine.value == "" ){
+              validate = false;
+              return;
+            }
+
+            objCalc.lines.push(
+              {
+                'custommer': custommerLine.value,
+                'activity': selectActivity.value,
+                'clasification': selectClassification.value
+              }
+            );
+
+          });
+          if(validate && lines.length == groupPolizas.querySelectorAll(
+            ".paragraph-type--proposals-lines"
+          ).length){
+            fetch('/get/calculate-prize', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(objCalc)
+            })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Error en la petición');
+              }
+              return response.json();
+            })
+            .then(data => {
+              prize.value = data.prize;
+              totalPrize.value = data.prizeTotal;
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+
+          }
+        }
+
       }
 
     },

@@ -120,6 +120,56 @@ class ProposalController extends ControllerBase
     }
 
     /**
+     * Calculate prize total proposal
+     *
+     * @param Request $req
+     *  Request
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     *  Json with data
+     */
+    public function calculateProposal(Request $req) : JsonResponse {
+        $content = json_decode($req->getContent(), TRUE);
+        $coverage = $this->entityTypeManager->getStorage('node')->load($this->extractId($content['coverage']));
+        $prize = 0;
+        $prizeTotal = 0;
+        if(!empty($coverage))
+            $prize = $coverage->field_sum->value;
+        foreach ($content['lines'] as $key => $line) {
+            $custommer = $this->entityTypeManager->getStorage('node')->load($this->extractId($line['custommer']));
+            $forEge =  $this->ageCalculate($custommer->field_birth_date->value) > 60 ? ($prize * 2) : $prize;
+            $prizeTotal += $forEge * $content['months'];
+        }
+        return  new JsonResponse(['prize' => $prize, 'prizeTotal' => $prizeTotal]);
+    }
+
+    /**
+     * Return age
+     *
+     * @param [type] $birthDate
+     * @return void
+     */
+    public function ageCalculate($birthDate) {
+        $birthDate = new \DateTime($birthDate);
+        $today = new \DateTime();
+        $age = $birthDate->diff($today)->y;
+        return $age;
+    }
+
+    /**
+     * Return number id
+     *
+     * @param string $text
+     *
+     * @return int
+     */
+    public function extractId($text) : int {
+        if (preg_match('/\((\d+)\)/', $text, $matches)) {
+            return $matches[1];
+        }
+        return -1;
+    }
+
+    /**
      * Get Clasification for activity id
      *
      * @param int $activity_id

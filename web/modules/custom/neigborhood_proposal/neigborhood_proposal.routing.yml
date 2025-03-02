@@ -24,3 +24,12 @@ proposal.get_activity_clasification:
   requirements:
     _permission: 'access content'
     _role: 'authenticated'
+
+proposal.calculate_prize:
+  path: '/get/calculate-prize'
+  defaults:
+    _controller: \Drupal\neigborhood_proposal\Controller\ProposalController::calculateProposal
+    _title: 'Create client'
+  requirements:
+    _permission: 'access content'
+    _role: 'authenticated'
