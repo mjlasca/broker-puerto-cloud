@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Render\RendererInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Dompdf\Dompdf;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class controller events
@@ -136,7 +138,7 @@ class ProposalController extends ControllerBase
         $prize = 0;
         $prizeTotal = 0;
         if(!empty($coverage))
-            $prize = $coverage->field_sum->value;
+            $prize = $coverage->field_monthly_value->value;
         foreach ($content['lines'] as $key => $line) {
             $custommer = $this->entityTypeManager->getStorage('node')->load($this->extractId($line['custommer']));
             $forEge =  $this->ageCalculate($custommer->field_birth_date->value) > 60 ? ($prize * 2) : $prize;
@@ -203,5 +205,42 @@ class ProposalController extends ControllerBase
         }
         return $result;
     }
+
+    /**
+     * Download PDF proposal
+     *
+     * @param $nid
+     *   id node
+     * @return Response
+     *  Return PDF proposal
+     */
+    public function downloadPDFProposal($nid) : Response {
+        $proposal = $this->entityTypeManager->getStorage('node')->load($nid);
+        $base_path = \Drupal::service('extension.path.resolver')->getPath('module', 'neigborhood_proposal');
+        $tmp = \Drupal::service('file_system')->getTempDirectory();
+        $dompdf = new Dompdf([
+        'isRemoteEnabled' => TRUE,
+        'fontDir' => $tmp,
+        'fontCache' => $tmp,
+        'tempDir' => $tmp,
+        'chroot' => $tmp,
+        ]);
+        ob_start();
+        require_once $base_path . '/templates/DownloadProposal.php';
+        $html = ob_get_clean();
+        $dompdf->loadHtml($html);
+        $dompdf->render();
+        $pdfOutput = $dompdf->output();
+        $filename = "Proposal_$nid.pdf";
+        return new Response(
+            $pdfOutput,
+            200,
+            [
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'inline; filename="' . $filename . '"',
+            ]
+        );
+
+      }
 
 }

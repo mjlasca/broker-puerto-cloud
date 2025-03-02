@@ -1,4 +1,18 @@
 <?php
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implementa hook_entity_view() para redireccionar nodos.
+ */
+function neigborhood_proposal_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+  if ($entity instanceof \Drupal\node\NodeInterface && $entity->bundle() === 'proposal') {
+    $nid = $entity->id();
+    $url = "/proposal/download/$nid";
+    $response = new RedirectResponse($url);
+    $response->send();
+    exit;
+  }
+}
 
 function neigborhood_proposal_form_alter(&$form, &$form_state, $form_id) {
 

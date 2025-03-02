@@ -33,3 +33,12 @@ proposal.calculate_prize:
   requirements:
     _permission: 'access content'
     _role: 'authenticated'
+
+proposal.download_pdf:
+  path: '/proposal/download/{nid}'
+  defaults:
+    _controller: \Drupal\neigborhood_proposal\Controller\ProposalController::downloadPDFProposal
+    _title: 'Create client'
+  requirements:
+    _permission: 'access content'
+    _role: 'authenticated'
