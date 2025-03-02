@@ -3,7 +3,6 @@ langcode: es
 status: true
 dependencies:
   config:
-    - field.field.node.proposal.field_add_taker
     - field.field.node.proposal.field_company
     - field.field.node.proposal.field_coverage
     - field.field.node.proposal.field_debit_note
@@ -40,16 +39,6 @@ targetEntityType: node
 bundle: proposal
 mode: default
 content:
-  field_add_taker:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 125
-    region: content
   field_company:
     type: entity_reference_label
     label: above

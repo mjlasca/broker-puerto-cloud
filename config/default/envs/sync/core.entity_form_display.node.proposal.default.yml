@@ -3,7 +3,6 @@ langcode: es
 status: true
 dependencies:
   config:
-    - field.field.node.proposal.field_add_taker
     - field.field.node.proposal.field_company
     - field.field.node.proposal.field_coverage
     - field.field.node.proposal.field_debit_note
@@ -57,7 +56,6 @@ third_party_settings:
     group_polizas:
       children:
         - field_taker
-        - field_add_taker
         - field_lines_proposal
       label: Pólizas
       region: content
@@ -91,11 +89,13 @@ third_party_settings:
         required_fields: true
     group_vigencia_cobertura:
       children:
+        - field_valid_since
+        - field_months
+        - field_validity_until
         - field_coverage
         - field_method_payment
         - field_prize
         - field_total_prize
-        - group_vigencia
       label: Vigencia/Cobertura
       region: content
       parent_name: group_propuestas
@@ -109,23 +109,6 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-    group_vigencia:
-      children:
-        - field_valid_since
-        - field_months
-        - field_validity_until
-      label: Vigencia
-      region: hidden
-      parent_name: group_vigencia_cobertura
-      weight: 10
-      format_type: fieldset
-      format_settings:
-        classes: flex
-        show_empty_fields: false
-        id: ''
-        label_as_html: false
-        description: ''
-        required_fields: true
 id: node.proposal.default
 targetEntityType: node
 bundle: proposal
@@ -133,20 +116,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_add_taker:
-    type: boolean_checkbox
-    weight: 10
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   field_coverage:
     type: entity_reference_autocomplete
-    weight: 14
+    weight: 19
     region: content
     settings:
       match_operator: CONTAINS
@@ -173,18 +149,14 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
   field_method_payment:
-    type: entity_reference_autocomplete
-    weight: 15
+    type: options_select
+    weight: 20
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_months:
     type: options_select
-    weight: 12
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -210,7 +182,7 @@ content:
     third_party_settings: {  }
   field_prize:
     type: number
-    weight: 16
+    weight: 21
     region: content
     settings:
       placeholder: ''
@@ -227,53 +199,53 @@ content:
     third_party_settings: {  }
   field_total_prize:
     type: number
-    weight: 17
+    weight: 22
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_valid_since:
     type: datetime_default
-    weight: 11
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   field_validity_until:
     type: datetime_default
-    weight: 13
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 4
+    weight: 5
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 7
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 10
+    weight: 11
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 8
+    weight: 9
     region: content
     settings:
       display_label: true
@@ -288,7 +260,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS
