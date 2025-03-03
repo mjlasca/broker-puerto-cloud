@@ -11,6 +11,7 @@
       const date1Validate = context.querySelector('#edit-field-validity-until-0-value-date');
       const timeValidate = context.querySelector('#edit-field-validity-until-0-value-time');
       const groupPolizas = context.querySelector("#edit-group-polizas table");
+      const formCreate = context.querySelector('#node-proposal-form');
       const months = context.querySelector('#edit-field-months');
       const coverage = document.querySelector('input[name="field_coverage[0][target_id]"]');
       let prizeFixed = 0;
@@ -22,9 +23,11 @@
       }
 
       if(date0Validate){
-        const startDate0 = new Date();
-        const formattedDate0 = dateFns.format(startDate0, "yyyy-MM-dd");
-        date0Validate.value = formattedDate0;
+        if(formCreate){
+          const startDate0 = new Date();
+          const formattedDate0 = dateFns.format(startDate0, "yyyy-MM-dd");
+          date0Validate.value = formattedDate0;
+        }
         time0Validate.value = "00:00:01";
         time0Validate.setAttribute('readonly',true);
         date0Validate.addEventListener("change", function(event) {
