@@ -1,0 +1,14 @@
+uuid: 1ab22ba9-6f09-46be-86f6-682c1e847df7
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.company_manager
+  module:
+    - user
+id: user_remove_role_action.company_manager
+label: 'Elimina el rol Gerente al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: company_manager

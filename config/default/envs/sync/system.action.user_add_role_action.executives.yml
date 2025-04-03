@@ -1,0 +1,14 @@
+uuid: 8bc9657b-a882-4834-a31d-38c1b855891f
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.executives
+  module:
+    - user
+id: user_add_role_action.executives
+label: 'Añade el rol Ejecutivos empresa al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: executives

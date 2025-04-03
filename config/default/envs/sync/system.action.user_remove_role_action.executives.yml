@@ -1,0 +1,14 @@
+uuid: 35fa700d-dd8a-4f4f-a5c8-19f649a5e868
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.executives
+  module:
+    - user
+id: user_remove_role_action.executives
+label: 'Elimina el rol Ejecutivos empresa al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: executives

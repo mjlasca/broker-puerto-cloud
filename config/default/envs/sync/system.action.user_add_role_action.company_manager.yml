@@ -1,0 +1,14 @@
+uuid: a3548039-d611-4585-86da-3bfbce0daa5e
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.company_manager
+  module:
+    - user
+id: user_add_role_action.company_manager
+label: 'Añade el rol Gerente al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: company_manager

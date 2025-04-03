@@ -1,0 +1,14 @@
+uuid: 38674b39-fba1-4dff-9fd1-559d1457f0b1
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.agent
+  module:
+    - user
+id: user_remove_role_action.agent
+label: 'Elimina el rol Agente al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: agent

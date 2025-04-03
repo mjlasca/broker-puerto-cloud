@@ -1,0 +1,85 @@
+uuid: b7795190-9332-45cb-ab05-07782e7dcc52
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.coverage
+    - node.type.custommer
+    - node.type.insurance
+    - node.type.neighborhood
+    - node.type.neighborhood_group
+    - node.type.proposal
+    - taxonomy.vocabulary.activity_clasification
+    - taxonomy.vocabulary.document_type
+    - taxonomy.vocabulary.method_payment
+    - taxonomy.vocabulary.postal_code
+    - taxonomy.vocabulary.tax_situation
+  module:
+    - node
+    - system
+    - taxonomy
+    - toolbar
+id: company_manager
+label: 'Titular empresa'
+weight: 4
+is_admin: false
+permissions:
+  - 'access content overview'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer account settings'
+  - 'administer nodes'
+  - 'administer users'
+  - 'change own username'
+  - 'create coverage content'
+  - 'create custommer content'
+  - 'create insurance content'
+  - 'create neighborhood content'
+  - 'create neighborhood_group content'
+  - 'create proposal content'
+  - 'create terms in activity_clasification'
+  - 'create terms in document_type'
+  - 'create terms in method_payment'
+  - 'create terms in postal_code'
+  - 'create terms in tax_situation'
+  - 'delete any coverage content'
+  - 'delete any custommer content'
+  - 'delete any insurance content'
+  - 'delete any neighborhood content'
+  - 'delete any neighborhood_group content'
+  - 'delete any proposal content'
+  - 'delete own coverage content'
+  - 'delete own custommer content'
+  - 'delete own insurance content'
+  - 'delete own neighborhood content'
+  - 'delete own neighborhood_group content'
+  - 'delete own proposal content'
+  - 'delete terms in activity_clasification'
+  - 'delete terms in document_type'
+  - 'delete terms in method_payment'
+  - 'delete terms in postal_code'
+  - 'delete terms in tax_situation'
+  - 'edit any coverage content'
+  - 'edit any custommer content'
+  - 'edit any insurance content'
+  - 'edit any neighborhood content'
+  - 'edit any neighborhood_group content'
+  - 'edit any proposal content'
+  - 'edit own coverage content'
+  - 'edit own custommer content'
+  - 'edit own insurance content'
+  - 'edit own neighborhood content'
+  - 'edit own neighborhood_group content'
+  - 'edit own proposal content'
+  - 'edit terms in activity_clasification'
+  - 'edit terms in document_type'
+  - 'edit terms in method_payment'
+  - 'edit terms in postal_code'
+  - 'edit terms in tax_situation'
+  - 'view coverage revisions'
+  - 'view insurance revisions'
+  - 'view own unpublished content'
+  - 'view proposal revisions'
+  - 'view the administration theme'
+  - 'view user email addresses'

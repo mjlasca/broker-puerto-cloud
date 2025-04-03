@@ -1,0 +1,47 @@
+uuid: e2fedce9-8762-44b3-8f1e-374d6a82cdb4
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.custommer
+    - node.type.neighborhood
+    - node.type.neighborhood_group
+    - node.type.proposal
+    - taxonomy.vocabulary.activity_clasification
+    - taxonomy.vocabulary.postal_code
+  module:
+    - node
+    - system
+    - taxonomy
+    - toolbar
+id: agent
+label: Agente
+weight: 6
+is_admin: false
+permissions:
+  - 'access content overview'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'change own username'
+  - 'create custommer content'
+  - 'create neighborhood content'
+  - 'create neighborhood_group content'
+  - 'create proposal content'
+  - 'create terms in activity_clasification'
+  - 'create terms in postal_code'
+  - 'delete any custommer content'
+  - 'delete any neighborhood content'
+  - 'delete terms in activity_clasification'
+  - 'delete terms in postal_code'
+  - 'edit any custommer content'
+  - 'edit any neighborhood content'
+  - 'edit any neighborhood_group content'
+  - 'edit any proposal content'
+  - 'edit own custommer content'
+  - 'edit own neighborhood content'
+  - 'edit own neighborhood_group content'
+  - 'edit own proposal content'
+  - 'edit terms in activity_clasification'
+  - 'edit terms in postal_code'
+  - 'view own unpublished content'
+  - 'view the administration theme'
