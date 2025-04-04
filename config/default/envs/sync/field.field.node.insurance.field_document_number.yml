@@ -1,0 +1,23 @@
+uuid: 761ad1b2-9574-4e50-979f-6362009326df
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_number
+    - node.type.insurance
+id: node.insurance.field_document_number
+field_name: field_document_number
+entity_type: node
+bundle: insurance
+label: 'Número de documento'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

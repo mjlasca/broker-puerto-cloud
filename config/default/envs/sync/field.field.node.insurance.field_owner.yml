@@ -1,0 +1,19 @@
+uuid: 626c957e-d036-4d71-bf04-3f69e6702ccd
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_owner
+    - node.type.insurance
+id: node.insurance.field_owner
+field_name: field_owner
+entity_type: node
+bundle: insurance
+label: 'Titular aseguradora'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 6f6f3a28-75ff-43e2-b466-81184738c64a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address
+    - node.type.insurance
+id: node.insurance.field_address
+field_name: field_address
+entity_type: node
+bundle: insurance
+label: Dirección
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

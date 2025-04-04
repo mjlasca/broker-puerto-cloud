@@ -1,0 +1,19 @@
+uuid: ba10fe5d-b716-4d78-821f-29a4b37c1902
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sub_neighborhood
+    - node.type.neighborhood
+id: node.neighborhood.field_sub_neighborhood
+field_name: field_sub_neighborhood
+entity_type: node
+bundle: neighborhood
+label: Sub-barrio
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

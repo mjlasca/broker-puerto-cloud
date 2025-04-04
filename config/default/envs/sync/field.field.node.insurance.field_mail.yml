@@ -1,0 +1,19 @@
+uuid: 42f254a8-ad92-46ac-a25e-a01b77b75ad1
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mail
+    - node.type.insurance
+id: node.insurance.field_mail
+field_name: field_mail
+entity_type: node
+bundle: insurance
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

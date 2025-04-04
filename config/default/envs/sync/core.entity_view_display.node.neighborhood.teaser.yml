@@ -1,0 +1,52 @@
+uuid: e1f8ea05-6042-4752-b595-9ff9cbd1e72c
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.neighborhood.field_address
+    - field.field.node.neighborhood.field_mail
+    - field.field.node.neighborhood.field_name
+    - field.field.node.neighborhood.field_phone
+    - field.field.node.neighborhood.field_sub_neighborhood
+    - node.type.neighborhood
+  module:
+    - user
+id: node.neighborhood.teaser
+targetEntityType: node
+bundle: neighborhood
+mode: teaser
+content:
+  field_address:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_mail:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_phone:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_name: true
+  field_sub_neighborhood: true
+  langcode: true

@@ -1,20 +1,19 @@
-uuid: 4e181e16-8bbb-4d64-bafe-3a7d9834b2dd
+uuid: 41aa04a4-2533-4187-a559-1a0899bf7b69
 langcode: es
 status: true
 dependencies:
   config:
-    - field.field.node.insurance.field_address
-    - field.field.node.insurance.field_company_name
-    - field.field.node.insurance.field_document_number
-    - field.field.node.insurance.field_mail
-    - field.field.node.insurance.field_owner
-    - field.field.node.insurance.field_phone
-    - node.type.insurance
+    - field.field.node.neighborhood.field_address
+    - field.field.node.neighborhood.field_mail
+    - field.field.node.neighborhood.field_name
+    - field.field.node.neighborhood.field_phone
+    - field.field.node.neighborhood.field_sub_neighborhood
+    - node.type.neighborhood
   module:
     - path
-id: node.insurance.default
+id: node.neighborhood.default
 targetEntityType: node
-bundle: insurance
+bundle: neighborhood
 mode: default
 content:
   created:
@@ -31,21 +30,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_company_name:
-    type: string_textfield
-    weight: 121
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_document_number:
-    type: number
-    weight: 1
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
   field_mail:
     type: email_default
     weight: 10
@@ -54,9 +38,9 @@ content:
       placeholder: ''
       size: 60
     third_party_settings: {  }
-  field_owner:
+  field_name:
     type: string_textfield
-    weight: 122
+    weight: 121
     region: content
     settings:
       size: 60
@@ -67,6 +51,14 @@ content:
     weight: 7
     region: content
     settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_sub_neighborhood:
+    type: string_textfield
+    weight: 122
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   langcode:

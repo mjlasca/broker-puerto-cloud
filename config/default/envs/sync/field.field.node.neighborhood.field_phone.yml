@@ -1,0 +1,23 @@
+uuid: 435f81fb-c79f-4a0f-add9-dcc76c50529b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.neighborhood
+id: node.neighborhood.field_phone
+field_name: field_phone
+entity_type: node
+bundle: neighborhood
+label: Teléfono
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

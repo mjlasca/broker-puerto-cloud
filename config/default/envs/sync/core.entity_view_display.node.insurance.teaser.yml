@@ -1,8 +1,9 @@
-uuid: d9c6c28d-9fc0-4b89-98e0-31d520a79fbd
+uuid: b5c0a641-05e8-4825-aecc-9bafb4676738
 langcode: es
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.field.node.insurance.field_address
     - field.field.node.insurance.field_company_name
     - field.field.node.insurance.field_document_number
@@ -12,10 +13,10 @@ dependencies:
     - node.type.insurance
   module:
     - user
-id: node.insurance.default
+id: node.insurance.teaser
 targetEntityType: node
 bundle: insurance
-mode: default
+mode: teaser
 content:
   field_address:
     type: string
@@ -24,14 +25,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 103
-    region: content
-  field_company_name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 101
     region: content
   field_document_number:
     type: number_integer
@@ -49,14 +42,6 @@ content:
     third_party_settings: {  }
     weight: 104
     region: content
-  field_owner:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 102
-    region: content
   field_phone:
     type: number_integer
     label: above
@@ -72,4 +57,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_company_name: true
+  field_owner: true
   langcode: true

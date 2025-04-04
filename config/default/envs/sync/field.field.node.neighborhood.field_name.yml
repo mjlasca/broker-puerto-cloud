@@ -1,0 +1,19 @@
+uuid: 419cce9f-b070-40fe-ac71-cffd9f52a089
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_name
+    - node.type.neighborhood
+id: node.neighborhood.field_name
+field_name: field_name
+entity_type: node
+bundle: neighborhood
+label: Nombre
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
