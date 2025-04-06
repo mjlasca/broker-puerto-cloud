@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.neighborhood.field_address
+    - field.field.node.neighborhood.field_company
     - field.field.node.neighborhood.field_mail
-    - field.field.node.neighborhood.field_name
-    - field.field.node.neighborhood.field_phone
+    - field.field.node.neighborhood.field_phone_number
     - field.field.node.neighborhood.field_sub_neighborhood
     - node.type.neighborhood
   module:
@@ -24,6 +24,14 @@ content:
     third_party_settings: {  }
     weight: 103
     region: content
+  field_company:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
   field_mail:
     type: basic_string
     label: above
@@ -31,22 +39,13 @@ content:
     third_party_settings: {  }
     weight: 104
     region: content
-  field_name:
+  field_phone_number:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 101
-    region: content
-  field_phone:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 109
+    weight: 112
     region: content
   field_sub_neighborhood:
     type: string

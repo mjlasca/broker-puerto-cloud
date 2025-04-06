@@ -5,9 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.neighborhood.field_address
+    - field.field.node.neighborhood.field_company
     - field.field.node.neighborhood.field_mail
-    - field.field.node.neighborhood.field_name
-    - field.field.node.neighborhood.field_phone
+    - field.field.node.neighborhood.field_phone_number
     - field.field.node.neighborhood.field_sub_neighborhood
     - node.type.neighborhood
   module:
@@ -32,21 +32,13 @@ content:
     third_party_settings: {  }
     weight: 104
     region: content
-  field_phone:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 109
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
 hidden:
-  field_name: true
+  field_company: true
+  field_phone_number: true
   field_sub_neighborhood: true
   langcode: true

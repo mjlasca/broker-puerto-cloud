@@ -137,12 +137,24 @@ class ProposalController extends ControllerBase
         $coverage = $this->entityTypeManager->getStorage('node')->load($this->extractId($content['coverage']));
         $prize = 0;
         $prizeTotal = 0;
-        if(!empty($coverage))
+        if(!empty($coverage)){
             $prize = $coverage->field_monthly_value->value;
+            $prize1 = $prize * $content['months'] ?? 0;
+            if($content['months'] == 2 && !empty($coverage->field_2x1->value)){
+                $prize1 = $coverage->field_2x1->value;
+            }
+            if($content['months'] == 3 && !empty($coverage->field_3x2->value)){
+                $prize1 = $coverage->field_3x2->value;
+            }
+            if($content['months'] == 6 && !empty($coverage->field_6x4->value)){
+                $prize1 = $coverage->field_6x4->value;
+            }
+        }
+        
         foreach ($content['lines'] as $key => $line) {
             $custommer = $this->entityTypeManager->getStorage('node')->load($this->extractId($line['custommer']));
-            $forEge =  $this->ageCalculate($custommer->field_birth_date->value) > 60 ? ($prize * 2) : $prize;
-            $prizeTotal += $forEge * $content['months'];
+            $forEge =  $this->ageCalculate($custommer->field_birth_date->value) > 60 ? ($prize1 * 2) : $prize1;
+            $prizeTotal += $forEge;
         }
         return  new JsonResponse(['prize' => $prize, 'prizeTotal' => $prizeTotal]);
     }

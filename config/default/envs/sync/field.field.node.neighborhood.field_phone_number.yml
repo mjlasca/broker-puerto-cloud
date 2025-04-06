@@ -1,17 +1,17 @@
-uuid: 419cce9f-b070-40fe-ac71-cffd9f52a089
+uuid: 669727c4-1f0e-48bb-ada6-6d86db034bc0
 langcode: es
 status: true
 dependencies:
   config:
-    - field.storage.node.field_name
+    - field.storage.node.field_phone_number
     - node.type.neighborhood
-id: node.neighborhood.field_name
-field_name: field_name
+id: node.neighborhood.field_phone_number
+field_name: field_phone_number
 entity_type: node
 bundle: neighborhood
-label: Nombre
+label: 'Número de teléfono'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

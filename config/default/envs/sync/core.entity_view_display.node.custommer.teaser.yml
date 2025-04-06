@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.custommer.field_lastname
     - field.field.node.custommer.field_mail
     - field.field.node.custommer.field_names
-    - field.field.node.custommer.field_phone
+    - field.field.node.custommer.field_phone_number
     - field.field.node.custommer.field_postal_code
     - field.field.node.custommer.field_sex
     - node.type.custommer
@@ -50,15 +50,6 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
-  field_document_number:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 107
-    region: content
   field_document_type:
     type: entity_reference_label
     label: above
@@ -90,15 +81,6 @@ content:
     third_party_settings: {  }
     weight: 106
     region: content
-  field_phone:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 109
-    region: content
   field_postal_code:
     type: entity_reference_label
     label: above
@@ -120,4 +102,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_document_number: true
+  field_phone_number: true
   langcode: true

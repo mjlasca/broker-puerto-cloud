@@ -1,17 +1,17 @@
-uuid: 97d99796-b69d-4afb-b79a-a7fea7350dfc
+uuid: 67e0f95b-6ba0-48bd-bbbc-29872976c2d7
 langcode: es
 status: true
 dependencies:
   config:
-    - field.storage.node.field_document_number
+    - field.storage.node.field_phone_number
     - node.type.custommer
-id: node.custommer.field_document_number
-field_name: field_document_number
+id: node.custommer.field_phone_number
+field_name: field_phone_number
 entity_type: node
 bundle: custommer
-label: 'Número de documento'
+label: 'Número de teléfono'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

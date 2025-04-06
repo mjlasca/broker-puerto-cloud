@@ -253,7 +253,7 @@
           const lines = groupPolizas.querySelectorAll(
             ".paragraph-type--proposals-lines"
           );
-          console.log(lines.length);
+          
           lines.forEach((line) => {
             const selectActivity = line.querySelector(
               "select[name*='[subform][field_activity]']"

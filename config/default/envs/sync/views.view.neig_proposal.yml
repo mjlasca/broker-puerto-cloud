@@ -1,9 +1,8 @@
 uuid: 6de370bd-082d-450d-8453-49f2ff265de5
 langcode: es
-status: true
+status: false
 dependencies:
   config:
-    - field.storage.node.field_document_number
     - field.storage.node.field_lastname
     - field.storage.node.field_method_payment
     - field.storage.node.field_names
@@ -280,70 +279,6 @@ display:
           type: string
           settings:
             link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_document_number:
-          id: field_document_number
-          table: node__field_document_number
-          field: field_document_number
-          relationship: field_taker
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1071,7 +1006,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_document_number'
         - 'config:field.storage.node.field_lastname'
         - 'config:field.storage.node.field_method_payment'
         - 'config:field.storage.node.field_names'
@@ -1099,7 +1033,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_document_number'
         - 'config:field.storage.node.field_lastname'
         - 'config:field.storage.node.field_method_payment'
         - 'config:field.storage.node.field_names'

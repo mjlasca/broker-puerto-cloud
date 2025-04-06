@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.insurance.field_address
     - field.field.node.insurance.field_company_name
-    - field.field.node.insurance.field_document_number
     - field.field.node.insurance.field_mail
     - field.field.node.insurance.field_owner
     - field.field.node.insurance.field_phone
@@ -32,15 +31,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 101
-    region: content
-  field_document_number:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 107
     region: content
   field_mail:
     type: basic_string
